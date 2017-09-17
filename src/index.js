@@ -570,7 +570,7 @@ export default class extends Component {
     let button = null
 
     if (this.props.loop || this.state.index !== 0) {
-      button = this.props.prevButton || <Text style={styles.buttonText}>{Platform.OS !== 'android' && I18nManager.isRTL !== 'android' ? '›' : '‹'}</Text>
+      button = this.props.prevButton || <Text style={styles.buttonText}>{Platform.OS !== 'android' && I18nManager.isRTL ? '›' : '‹'}</Text>
     }
 
     return (
