@@ -11,11 +11,11 @@ import {
   ScrollView,
   Dimensions,
   TouchableOpacity,
-  ViewPagerAndroid,
   Platform,
   ActivityIndicator,
   I18nManager,
 } from 'react-native'
+import PagerView from 'react-native-pager-view';
 
 const { width, height } = Dimensions.get('window')
 
@@ -612,14 +612,14 @@ export default class extends Component {
        )
     }
     return (
-      <ViewPagerAndroid ref='scrollView'
+      <PagerView ref='scrollView'
         {...this.props}
         initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
         onPageSelected={this.onScrollEnd}
         key={pages.length}
         style={[styles.wrapperAndroid, this.props.style]}>
         {I18nManager.isRTL ? pages.reverse() : pages}
-      </ViewPagerAndroid>
+      </PagerView>
     )
   }
 
